@@ -9,13 +9,14 @@
     systemPackages = with pkgs;
       [
         coreutils
-        curl 
+        curl
         docker
-        git 
+        git
         kate
         neovim
         nodejs-10_x
         python36Packages.neovim
+        tig
         wget
         vimHugeX 
       ];
