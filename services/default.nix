@@ -3,6 +3,8 @@
 {
   imports = [
     ./bluetooth.nix
-    ./redshift.nix
+    ./flatpak.nix
+#     ./redshift.nix
+    ./samba.nix
   ];
 }

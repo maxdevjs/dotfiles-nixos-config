@@ -2,7 +2,7 @@
 
 {
   nixpkgs.overlays = [
-    (import ./st/st.nix)
+    #(import ./st/st.nix)
   ];
 
   environment.systemPackages = with pkgs; [

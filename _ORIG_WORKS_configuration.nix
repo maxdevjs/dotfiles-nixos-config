@@ -8,63 +8,39 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./browsers/default.nix
-      ./desktop-environments/default.nix
-      ./dev/default.nix
-      ./msgs/default.nix
-      ./shells/default.nix
-      ./prgs/default.nix
-      ./services/default.nix
-      ./system/default.nix
-      ./users/default.nix
-      ./overlays/default.nix
     ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
   boot.loader.grub.efiSupport = true;
+  boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.efi.efiSysMountPoint = "/boot/EFI";
   boot.loader.grub.enableCryptodisk = true;
-  boot.loader.grub.useOSProber = true;
-  # Add memtest86
-  boot.loader.grub.memtest86.enable = true;
+  
+  boot.initrd.luks.devices = [
+    {
+        name = "nixos-enc";
+        device = "/dev/sda2";
+        preLVM = true;
+        allowDiscards = true;
+    }
+  ];
+  
+  #boot.initrd.luks.devices.crypted.device = "/dev/disk/by-uuid/7cc391ec-53ef-4f66-b36f-3cbaa8be639d";
+  #fileSystems."/".device = "/dev/mapper/crypted";
 
-  # grub 2.04
-  # https://github.com/NixOS/nixpkgs/issues/61718
-  boot.loader.grub.efiInstallAsRemovable = true;
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.efi.canTouchEfiVariables = false;
-
- 
   # Define on which hard drive you want to install Grub.
   #boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   boot.loader.grub.device = "nodev"; # or "nodev" for efi only
-  
-#   boot.initrd.luks.devices = [
-#     {
-#         name = "nixos-enc";
-#         device = "/dev/sda2";
-#         preLVM = true;
-#         allowDiscards = true;
-#     }
-#   ];
 
-  boot.initrd.luks.devices =
-    {
-        nixos-enc = {
-          device = "/dev/sda2";
-          preLVM = true;
-          allowDiscards = true;
-        };
-    };
+  # networking.hostName = "nixos"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   networking = {
     networkmanager.enable = true;
     hostName = "max-nixos";
     usePredictableInterfaceNames = false;
-    
-    #firewall.enable = false;
   };
 
   # Configure network proxy if necessary
@@ -79,12 +55,13 @@
   # };
 
   # Set your time zone.
-  time.timeZone = "America/Sao_Paulo";
+  # time.timeZone = "Europe/Amsterdam";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    kdeconnect discover networkmanager nix-prefetch-scripts ntfs3g
+    firefox git kate kitty networkmanager nix-prefetch-scripts ntfs3g opera wget vim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -112,37 +89,46 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  #services.xserver.layout = "us";
-  #services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.layout = "us";
+  services.xserver.xkbOptions = "eurosign:e";
 
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
 
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-#   services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
-  #system.autoUpgrade.enable = true;
-  # system.autoUpgrade.channel = https://nixos.org/channels/nixos-19.09;
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = false;
-    # channel = https://nixos.org/channels/nixos-20.03;
-  };
-  
-  nix.gc = {
-    automatic = true;
-#     options = "-d --delete-older-than- 30d";
-  };
-    
-  
-  #   nix.nixPath = [
-  #     "nixos-config=/etc/nixos/configuration.nix"
-  #   ];
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # users.users.jane = {
+  #   isNormalUser = true;
+  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  # };
+
+
+users.enforceIdUniqueness = true;
+
+  users.extraUsers = {
+    max = {
+      isNormalUser = true;
+      home = "/home/max";
+      description = "Massimiliano Giroldi";
+      extraGroups = [ "audio" "disk" "docker" "networkmanager" "video" "wheel"];
+      uid = 1000;
+      #initialHashedPassword = "";
+      shell = pkgs.zsh;
+    };
+  }; 
+  users.groups = [
+    { gid = 1000; name = "max";  }
+  ];
+
+
+
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "20.03"; # Did you read the comment?
+  system.stateVersion = "19.03"; # Did you read the comment?
 
 }

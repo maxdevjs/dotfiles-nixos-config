@@ -7,6 +7,11 @@
         frei0r
         kdeApplications.kdenlive
         krita
+        gimp
+        inkscape
+        mpv
+        olive-editor
+        zathura
       ];
   };
 }

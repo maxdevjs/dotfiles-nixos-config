@@ -9,23 +9,30 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "sdhci_pci" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4bd3c31c-91a6-47ce-b9c0-401ef4aefdb7";
-      fsType = "ext4";
-      options = [ "noatime" "nodiratime" "discard" ];
-    };
-
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/242dd288-db1b-4205-a85a-3588da62510c";
+    { device = "/dev/disk/by-uuid/64974e29-d371-4045-93bd-be66df10ddfe";
       fsType = "ext4";
       options = [ "discard" ];
     };
 
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/7cc391ec-53ef-4f66-b36f-3cbaa8be639d";
+      fsType = "ext4";
+      options = [ "noatime" "nodiratime" "discard" ];
+    };
+
+  fileSystems."/boot" =
+    #{ device = "/dev/disk/by-uuid/0D32-914A";
+    { device = "/dev/disk/by-uuid/4087-F08B";
+      fsType = "vfat";
+    };
+
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/ddc325fc-50b2-46e0-98f8-6b575f0c2b01"; }
+    [ { device = "/dev/disk/by-uuid/f2e011c6-2b1e-45a9-9e05-cea4810d7dee"; }
     ];
 
   nix.maxJobs = lib.mkDefault 4;

@@ -2,7 +2,6 @@
 
 {
   imports = [
-#     ./direnv.nix
-    ./zsh.nix
+    ./browsers.nix
   ];
 }

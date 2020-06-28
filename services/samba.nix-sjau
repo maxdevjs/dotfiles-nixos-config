@@ -1,0 +1,48 @@
+
+{ config, pkgs, ... }:
+
+{
+  environment.systemPackages = with pkgs;
+  [
+    kdeApplications.kdenetwork-filesharing
+  ];
+#https://github.com/sjau/nixos/issues/1
+  # Samba
+    services.samba = {
+        enable = true;
+        securityType = "user";
+        syncPasswordsByPam = true;  # this can probably be removed
+        extraConfig = ''
+            server string = ${mySecrets.hostname}
+            netbios name = ${mySecrets.hostname}
+            workgroup = WORKGROUP
+            max xmit = 65535
+            socket options = TCP_NODELAY IPTOS_LOWDELAY SO_KEEPALIVE
+            hosts allow = 127.0.0.1 10.20.30.  # 10.20.30.0/24 is my wireguard 
+subnet
+            hosts deny = 0.0.0.0/0  # deny access from anywhere else
+            security = user
+            guest account = ${mySecrets.user}
+            map to guest = bad user
+
+            # Disable printer
+            printcap name = /dev/null
+            load printers = no
+            printing = bsd
+            show add printer wizard = no
+            disable spoolss = yes
+        '';
+        shares = {
+            Desktop = {
+                path = "/path/to/share";
+                browseable = "yes";
+                "read only" = "no";
+                "guest only" = "yes";
+                "guest ok" = "yes";
+                "create mask" = "0644";
+                "directory mask" = "0755";
+                "hosts allow" = "127.0.0.1 10.20.30."  # probably not needed
+            };
+        };
+    };
+}

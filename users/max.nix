@@ -19,13 +19,17 @@ with lib;
       isNormalUser = true;
       home = "/home/max";
       description = "Massimiliano Giroldi";
-      extraGroups = [ "audio" "disk" "docker" "networkmanager" "video" "wheel"];
+      extraGroups = [ "audio" "disk" "docker" "networkmanager" "samba-smbd" 
+"video" 
+"wheel"];
       uid = 1000;
       #initialHashedPassword = "";
       shell = pkgs.zsh;
     };
   }; 
-  users.groups = [
-    { gid = 1000; name = "max";  }
-  ];
+#   users.groups = [
+#     { gid = 1000; name = "max";  }
+#   ];
+  users.groups = 
+    { max = {gid = 1000;};  };
 }

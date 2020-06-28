@@ -2,16 +2,27 @@
   environment = {
     systemPackages = with pkgs;
       [
+        #lsd
+        file
+        fzf
         htop
-        usbutils
+        killall
+        lf                        # (as in "list files") is a terminal file manager written in Go
+        lsb-release
+        ncdu
+        neofetch
         nnn
         ranger
-        tree 
+        ripgrep-all               #  Ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, and more
+        silver-searcher           # 
+        steam-run-native          # to run unpatched games/programs
+        tree
         udiskie 
         unzip
+        usbutils
         vifm
         which
-        wmctrl
+        xorg.xev
         xclip
         xorg.xkill
         xsel
