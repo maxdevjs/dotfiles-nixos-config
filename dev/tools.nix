@@ -12,8 +12,6 @@
         flow
         gnuplot
         gcc
-        nodejs-10_x
-        #processing
         stdenv
         wget
       ];

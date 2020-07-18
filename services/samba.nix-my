@@ -9,16 +9,14 @@
 
   services.samba = {
     enable = true;
-    securityType = "user";
     enableNmbd = true;
     enableWinbindd = true;
     nsswins = true;
     
     package = pkgs.samba4Full;
+    securityType = "user";
     extraConfig = ''
 #       client max protocol = SMB3
-      server min protocol = NT1
-      client min protocol = NT1
       workgroup = WORKGROUP
 #       server string = smbnix
 #       netbios name = smbnix
@@ -28,36 +26,34 @@
       #hosts deny = 0.0.0.0/0
       #hosts allow = 192.168.0 localhost
       hosts allow = 0.0.0.0/0
-      guest account = max
+      guest account = nobody
       map to guest = bad user
       usershare path = /usr/local/samba/lib/usershares
       usershare max shares = 10
     '';
     shares = {
       Public = {
+        "allow guests" = true;
         path = "/home/max/Public";
         browseable = "yes";
         "read only" = "no";
         "guest ok" = "yes";
         "create mask" = "0644";
         "directory mask" = "0755";
+        "username" = "max";
+#         "force user" = "username";
+#         "force group" = "groupname";
       };
-      Desktop = {
-        path = "/home/max/Desktop";
-        browseable = "yes";
-        "read only" = "no";
-        "guest ok" = "yes";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-      };
-      Pictures = {
-        path = "/home/max/Pictures";
-        browseable = "yes";
-        "read only" = "no";
-        "guest ok" = "yes";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-      };
+#       private = {
+#         path = "/home/max/Desktop";
+#         browseable = "yes";
+#         "read only" = "no";
+#         "guest ok" = "no";
+#         "create mask" = "0644";
+#         "directory mask" = "0755";
+#         "force user" = "username";
+#         "force group" = "groupname";
+#       };
     };
   };
 }

@@ -1,13 +1,9 @@
 { config, pkgs, ...}: {
-    
-  nixpkgs.config.oraclejdk.accept_license = true;
-  
   environment = {
-    
     systemPackages = with pkgs;
       [
-        
-        jdk12
+        #nodejs-10_x
+        nodejs_latest
       ];
   };
 }

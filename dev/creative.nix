@@ -4,7 +4,8 @@
   environment = {
     systemPackages = with pkgs;
       [
-        processing
+        # Install via flatpak
+        #processing
       ];
   };
 }

@@ -8,6 +8,7 @@
     ./git.nix
     ./go.nix
     ./java.nix
+    ./node.nix
     ./python.nix
     ./qt.nix
     ./tools.nix
