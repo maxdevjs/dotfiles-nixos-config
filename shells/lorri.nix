@@ -1,11 +1,5 @@
 { config, pkgs, ... }:
 
-#{
-#  programs.lorri = {
-#      enable = true;
-#  };
-#}
-
 {
   #environment = {
   #  systemPackages = with pkgs;
