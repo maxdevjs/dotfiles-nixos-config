@@ -7,12 +7,12 @@
 #}
 
 {
-  environment = {
-    systemPackages = with pkgs;
-      [
-        lorri
-      ];
-  };
+  #environment = {
+  #  systemPackages = with pkgs;
+  #    [
+  #      lorri
+  #    ];
+  #};
   services.lorri = {
   #Note: There's a known issue preventing the lorri daemon 
   #from starting automatically upon installation. 
