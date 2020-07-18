@@ -2,7 +2,8 @@
 
 {
   imports = [
-#     ./direnv.nix
+    ./direnv.nix
+    ./lorri.nix
     ./zsh.nix
   ];
 }
