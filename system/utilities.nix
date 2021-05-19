@@ -4,6 +4,7 @@
       [
         xdo
         xdotool
+        xorg.xhost
         wmctrl
       ];
   };
