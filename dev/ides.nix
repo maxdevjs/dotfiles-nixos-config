@@ -1,10 +1,10 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, ...}:
+
+{
   environment = {
     systemPackages = with pkgs;
       [
-        alacritty
-        kitty
-        tilix
+        jetbrains.pycharm-community
       ];
   };
 }

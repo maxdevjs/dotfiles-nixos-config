@@ -6,6 +6,7 @@
       #https://git-send-email.io
       [
         git
+        gitAndTools.delta
         gitAndTools.gitFull
         gitAndTools.hub
         gitAndTools.git-radar

@@ -2,9 +2,8 @@
   environment = {
     systemPackages = with pkgs;
       [
-        alacritty
-        kitty
-        tilix
+        n2048
+        _2048-in-terminal
       ];
   };
 }

@@ -11,6 +11,8 @@
     kdeApplications.dolphin-plugins
     kdeApplications.spectacle
     
+    kdeFrameworks.kpurpose
+    
     ark
     dragon                                # multimedia player focused on simplicity
     kcalc

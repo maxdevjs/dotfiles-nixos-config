@@ -10,10 +10,12 @@
             fira              # Monospace
             hack-font
             inconsolata       # Monospace
-            #nerdfonts
+            nerdfonts
+            jetbrains-mono
             powerline-fonts
             ubuntu_font_family
-            unifont           # Inaternational languages
+            unifont           # International languages
+            victor-mono
           ];
         };
 #       ];

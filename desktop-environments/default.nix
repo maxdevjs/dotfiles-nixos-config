@@ -4,6 +4,7 @@
   imports = [
     ./kde.nix
     ./i3.nix
+    ./tools.nix
   ];
 
   # Enable the X11 windowing system.

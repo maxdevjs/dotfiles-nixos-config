@@ -7,10 +7,12 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./insecure/insecure.nix
       ./hardware-configuration.nix
       ./browsers/default.nix
       ./desktop-environments/default.nix
       ./dev/default.nix
+      ./games/default.nix
       ./msgs/default.nix
       ./shells/default.nix
       ./prgs/default.nix
@@ -130,10 +132,12 @@
     # channel = https://nixos.org/channels/nixos-20.03;
   };
   
+  # https://nixos.wiki/wiki/Storage_optimization
   nix.gc = {
     automatic = true;
-#     options = "-d --delete-older-than- 30d";
-  };
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+};
     
   
   #   nix.nixPath = [
@@ -143,6 +147,6 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "20.03"; # Did you read the comment?
+  system.stateVersion = "20.09"; # Did you read the comment?
 
 }
