@@ -7,6 +7,7 @@ let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
   environment.systemPackages = with pkgs; [
-    unstable.nodejs-16_x
+    unstable.nodejs-14_x
+    #unstable.nodejs-16_x
   ];
 }
