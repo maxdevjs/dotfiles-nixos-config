@@ -6,7 +6,7 @@
       if config.services.xserver.enable then
         [
           discord
-          google-chrome
+          #google-chrome: ../browsers/google-chrome_UNSTABLE.nix
           opera
           slack
           sublime3
