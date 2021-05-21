@@ -9,10 +9,8 @@
         kate
         neovim
         neovim-qt
-        #python37Packages.pynvim
-        #python38Packages.pynvim
         vimHugeX 
-        vscodium
+        #vscode-with-extensions
       ];
   };
 }

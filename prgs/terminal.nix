@@ -3,7 +3,7 @@
     systemPackages = with pkgs;
       [
         alacritty
-        kitty
+        #kitty
         tilix
       ];
   };

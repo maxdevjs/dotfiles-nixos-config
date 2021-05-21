@@ -1,0 +1,19 @@
+{ config, pkgs, ... }:
+
+# https://discourse.nixos.org/t/installing-only-a-single-package-from-unstable/5598/4
+# https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/editors/vscode/vscodium.nix#L51
+let
+  archive_fmt = "tar.gz";
+  plat = "linux-x64";
+  version = "1.56.1";
+  sha256 = "1p68fvlr2fwrwr61gfrna3hjzgyazacr373hldbc4fxca3fdij76";
+  unstable = import
+    (builtins.fetchTarball "https://github.com/VSCodium/vscodium/releases/download/${version}/VSCodium-${plat}-${version}.${archive_fmt}")
+    # reuse the current configuration
+    { config = config.nixpkgs.config; };
+in
+{
+  environment.systemPackages = with pkgs; [
+    unstable.vscodium
+  ];
+}

@@ -5,11 +5,12 @@
     systemPackages = with pkgs;
       #https://git-send-email.io
       [
-        git
+        git # migrate to unstable?
         gitAndTools.delta
         gitAndTools.gitFull
         gitAndTools.hub
         gitAndTools.git-radar
+        git-up
         tig
       ];
   };

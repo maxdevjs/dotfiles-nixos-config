@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./dotfiles-man.nix
+    ./dotfiles-managers.nix
     ./fonts.nix
     ./utilities.nix
   ];
