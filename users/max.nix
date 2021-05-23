@@ -18,7 +18,7 @@ with lib;
     max = {
       isNormalUser = true;
       home = "/home/max";
-      description = "Massimiliano Giroldi";
+      description = "maxdevjs";
       extraGroups = [ "audio" "disk" "docker" "networkmanager" "samba-smbd" 
 "video" 
 "wheel"];
