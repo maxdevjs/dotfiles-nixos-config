@@ -4,7 +4,7 @@
       [
         imagemagick
         gwenview
-#         pythonmagick
+        #pythonmagick
       ];
   };
 }

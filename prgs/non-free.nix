@@ -6,12 +6,12 @@
       if config.services.xserver.enable then
         [
           discord
-          #google-chrome: ../browsers/google-chrome_UNSTABLE.nix
+          #google-chrome: ../unstable/unstable.nix
           opera
           slack
           sublime3
           tdesktop
-          #vscode
+          #vscode: ../unstable/unstable.nix
         ]
       else
         [];

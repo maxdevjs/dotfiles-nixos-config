@@ -4,7 +4,7 @@
   environment = {
     systemPackages = with pkgs;
       [
-        # google-chrome unstable
+        # google-chrome: ../unstable/unstable.nix
         firefox
         vivaldi
         vivaldi-ffmpeg-codecs

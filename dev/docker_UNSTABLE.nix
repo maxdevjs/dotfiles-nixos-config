@@ -8,7 +8,7 @@ let
 in {
   environment = {
     systemPackages = with pkgs; [
-      unstable.nodejs-16_x
+      unstable.docker
     ];
   };
   virtualisation.docker.enable = true;

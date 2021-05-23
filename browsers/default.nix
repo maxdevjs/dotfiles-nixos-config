@@ -3,6 +3,6 @@
 {
   imports = [
     ./browsers.nix
-    ./google-chrome_UNSTABLE.nix
+    #./google-chrome_UNSTABLE.nix
   ];
 }

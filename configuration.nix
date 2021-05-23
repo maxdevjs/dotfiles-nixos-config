@@ -14,12 +14,13 @@
       ./dev/default.nix
       ./games/default.nix
       ./msgs/default.nix
+      ./overlays/default.nix
       ./shells/default.nix
       ./prgs/default.nix
       ./services/default.nix
       ./system/default.nix
+      ./unstable/unstable.nix
       ./users/default.nix
-      ./overlays/default.nix
     ];
 
   # Use the GRUB 2 boot loader.

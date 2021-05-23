@@ -10,7 +10,8 @@
         neovim
         neovim-qt
         vimHugeX 
-        #vscode-with-extensions
+        #vscode-with-extensions: editors.vscode_UNSTABLE.nix
+        #vscodium: editors.vscodium_UNSTABLE.nix
       ];
   };
 }
