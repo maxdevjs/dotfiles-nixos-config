@@ -9,7 +9,10 @@
   environment.systemPackages = with pkgs;
   [
     kdeApplications.dolphin-plugins
-    kdeApplications.spectacle
+    kdeApplications.kdegraphics-thumbnailers
+    kdeApplications.kio-extras # KIO plugins present a filesystem-like view of arbitrary data
+    
+kdeApplications.spectacle
     
     kdeFrameworks.kpurpose
     

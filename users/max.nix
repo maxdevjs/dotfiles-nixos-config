@@ -19,12 +19,14 @@ with lib;
       isNormalUser = true;
       home = "/home/max";
       description = "maxdevjs";
-      extraGroups = [ "audio" "disk" "docker" "networkmanager" "samba-smbd" 
-"video" 
-"wheel"];
+      extraGroups = [ 
+        "audio" "disk" "docker" 
+        "networkmanager" "samba-smbd" "video" "wheel"
+      ];
       uid = 1000;
       #initialHashedPassword = "";
       shell = pkgs.zsh;
+      #shell = pkgs.fish;
     };
   }; 
 #   users.groups = [
