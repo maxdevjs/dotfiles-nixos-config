@@ -7,12 +7,14 @@
         digikam
         ffmpeg-full
         frei0r
+        #jack2: ../unstable/unstable.nix
         kdeApplications.kdenlive
         krita
-        gimp
-        inkscape
+        #gimp: ../unstable/unstable.nix
+        #inkscape: ../unstable/unstable.nix
         mpv
         olive-editor
+        #simplescreenrecorder: ../unstable/unstable.nix
         zathura
         youtubeDL
       ];

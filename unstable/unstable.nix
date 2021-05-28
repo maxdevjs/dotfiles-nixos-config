@@ -13,12 +13,16 @@ in {
         #unstable.fishPlugins.fzf-fish
         #unstable.fishPlugins.done
         #oh-my-git
+        unstable.gimp
         unstable.google-chrome
         unstable.google-chrome-dev
         unstable.google-chrome-beta
+        unstable.inkscape
+        unstable.jack2
         unstable.jetbrains.pycharm-community
         unstable.kitty
         unstable.nodejs-14_x
+        unstable.simplescreenrecorder
         unstable.vscode
         unstable.vscodium
       ];
