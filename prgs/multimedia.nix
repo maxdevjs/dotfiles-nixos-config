@@ -7,6 +7,7 @@
         digikam
         ffmpeg-full
         frei0r
+        handbrake
         #jack2: ../unstable/unstable.nix
         kdeApplications.kdenlive
         krita
