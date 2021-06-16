@@ -22,6 +22,7 @@ in {
         unstable.jetbrains.pycharm-community
         unstable.kitty
         unstable.nodejs-14_x
+        unstable.nvd # Nix/NixOS package version diff tool
         unstable.simplescreenrecorder
         unstable.vscode
         unstable.vscodium
