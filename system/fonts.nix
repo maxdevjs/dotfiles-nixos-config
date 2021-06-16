@@ -7,6 +7,7 @@
           enableFontDir = true;
           fonts = with pkgs; [
             corefonts         # Microsoft free fonts
+            cozette
             fira              # Monospace
             hack-font
             inconsolata       # Monospace
