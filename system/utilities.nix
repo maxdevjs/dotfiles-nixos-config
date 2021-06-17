@@ -2,6 +2,7 @@
   environment = {
     systemPackages = with pkgs;
       [
+        bat
         exa
         finger_bsd
         xdo
