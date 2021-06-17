@@ -2,6 +2,8 @@
   environment = {
     systemPackages = with pkgs;
       [
+        bat
+        exa
         #lsd
         file
         fzf
@@ -14,6 +16,7 @@
         nnn
         ranger
         ripgrep-all               #  Ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, and more
+        # skim
         silver-searcher           # 
         steam-run-native          # to run unpatched games/programs
         tree
