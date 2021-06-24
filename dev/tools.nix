@@ -12,6 +12,7 @@
         flow
         gnuplot
         gcc
+        gnumake
         stdenv
         wget
       ];
