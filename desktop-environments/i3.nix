@@ -5,4 +5,8 @@
       package = pkgs.i3-gaps;
     };
   };
+  environment.systemPackages = with pkgs;
+  [
+    picom
+  ];
 }

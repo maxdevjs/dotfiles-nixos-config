@@ -12,7 +12,7 @@
     kdeApplications.kdegraphics-thumbnailers
     kdeApplications.kio-extras # KIO plugins present a filesystem-like view of arbitrary data
     
-kdeApplications.spectacle
+    kdeApplications.spectacle
     
     kdeFrameworks.kpurpose
     
