@@ -80,6 +80,11 @@
   #   consoleKeyMap = "us";
   #   defaultLocale = "en_US.UTF-8";
   # };
+  console = {
+    font = "Lat2-Terminus28";
+  #   consoleKeyMap = "us";
+  #   defaultLocale = "en_US.UTF-8";
+  };
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -132,18 +137,20 @@
     allowReboot = false;
     # channel = https://nixos.org/channels/nixos-20.03;
   };
+
+  nix.trustedUsers = [ "root" "max" ];
   
   # https://nixos.wiki/wiki/Storage_optimization
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 30d";
-};
-    
-  
+  };
+
   #   nix.nixPath = [
   #     "nixos-config=/etc/nixos/configuration.nix"
   #   ];
+  
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
