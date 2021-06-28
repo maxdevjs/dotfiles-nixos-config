@@ -21,7 +21,7 @@ with lib;
       description = "maxdevjs";
       extraGroups = [ 
         "audio" "disk" "docker" 
-        "networkmanager" "samba-smbd" "video" "wheel"
+        "networkmanager" "plugdev" "samba-smbd" "video" "wheel"
       ];
       uid = 1000;
       #initialHashedPassword = "";
