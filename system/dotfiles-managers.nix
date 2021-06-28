@@ -2,7 +2,7 @@
   environment = {
     systemPackages = with pkgs;
       [
-        yadm
+        #yadm # temporarily in unstable until I do not upgrade to 21.05
       ];
   };
 }
