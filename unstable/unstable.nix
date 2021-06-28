@@ -26,6 +26,7 @@ in {
         unstable.simplescreenrecorder
         unstable.vscode
         unstable.vscodium
+        unstable.yadm
       ];
   };
 }
