@@ -74,6 +74,7 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  # TODO: is this actually obsolete?
   # Select internationalisation properties.
   # i18n = {
   #   consoleFont = "Lat2-Terminus16";
@@ -81,7 +82,8 @@
   #   defaultLocale = "en_US.UTF-8";
   # };
   console = {
-    font = "Lat2-Terminus28";
+  #  font = "Lat2-Terminus28";
+    font = "latarcyrheb-sun32"; # https://grahamc.com/blog/nixos-on-dell-9560
   #   consoleKeyMap = "us";
   #   defaultLocale = "en_US.UTF-8";
   };
@@ -91,6 +93,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  # TODO: ...
   environment.systemPackages = with pkgs; [
     kdeconnect discover networkmanager nix-prefetch-scripts ntfs3g
   ];
@@ -106,6 +109,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
+  # TODO: set for KDEConnect
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
@@ -119,27 +123,19 @@
   hardware.pulseaudio.enable = true;
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  #services.xserver.layout = "us";
-  #services.xserver.xkbOptions = "eurosign:e";
-
-  # Enable touchpad support.
-  services.xserver.libinput.enable = true;
-
-  # Enable the KDE Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-#   services.xserver.desktopManager.plasma5.enable = true;
-
-  #system.autoUpgrade.enable = true;
-  # system.autoUpgrade.channel = https://nixos.org/channels/nixos-19.09;
-  system.autoUpgrade = {
+  services.xserver = {
     enable = true;
-    allowReboot = false;
-    # channel = https://nixos.org/channels/nixos-20.03;
+    #layout = "us";
+    #xkbOptions = "eurosign:e";
+
+    # Enable touchpad support.
+    libinput.enable = true;
+
+    # Enable the KDE Desktop Environment.
+    displayManager.sddm.enable = true;
+    # desktopManager.plasma5.enable = true; # desktop-environments/kde.nix
   };
 
-  nix.trustedUsers = [ "root" "max" ];
-  
   # https://nixos.wiki/wiki/Storage_optimization
   nix.gc = {
     automatic = true;
@@ -147,10 +143,18 @@
     options = "--delete-older-than 30d";
   };
 
+  nix.trustedUsers = [ "root" "max" ];
+  
   #   nix.nixPath = [
   #     "nixos-config=/etc/nixos/configuration.nix"
   #   ];
   
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+    # channel = https://nixos.org/channels/nixos-20.03;
+  };
+
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
