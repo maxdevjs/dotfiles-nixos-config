@@ -6,7 +6,8 @@
       [
         #https://github.com/neovim/neovim/wiki/FAQ
         
-        #TODO :checkhealth
+        #TODO: check nvim_lsp
+        
         
         # Providers
         #https://github.com/neovim/node-client

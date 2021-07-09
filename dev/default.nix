@@ -17,6 +17,7 @@
     #./java.nix
     #./node.nix: ../unstable/unstable.nix
     #./node_UNSTABLE.nix
+    ./lsp.nix
     ./nvim_lsp.nix
     ./python.nix
     ./qt.nix

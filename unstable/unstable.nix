@@ -24,6 +24,7 @@ in {
         unstable.nodejs-14_x
         unstable.nvd # Nix/NixOS package version diff tool
         unstable.simplescreenrecorder
+        unstable.sumneko-lua-language-server
         unstable.vscode
         unstable.vscodium
         unstable.yadm

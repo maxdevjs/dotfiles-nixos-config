@@ -15,7 +15,7 @@
         python38Packages.jedi
         python38Packages.pip
         python38Packages.pip-tools
-        python38Packages.pynvim
+        #python38Packages.pynvim
         python38Packages.setuptools
         python3Full
       ];
