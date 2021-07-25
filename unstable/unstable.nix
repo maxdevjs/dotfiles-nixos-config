@@ -21,6 +21,7 @@ in {
         unstable.jack2
         unstable.jetbrains.pycharm-community
         unstable.kitty
+        unstable.neovim
         unstable.nodejs-14_x
         unstable.nvd # Nix/NixOS package version diff tool
         unstable.simplescreenrecorder
