@@ -5,6 +5,7 @@
         finger_bsd
         fontpreview
         jq # lightweight and flexible command-line JSON processor
+        ripgrep
         xdo
         xdotool
         xorg.xdpyinfo
