@@ -3,7 +3,7 @@
 {
   imports = [
     ./direnv.nix
-    #./fish.nix
+    ./fish.nix
     ./lorri.nix
     ./zsh.nix
   ];

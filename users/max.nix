@@ -25,8 +25,8 @@ with lib;
       ];
       uid = 1000;
       #initialHashedPassword = "";
-      shell = pkgs.zsh;
-      #shell = pkgs.fish;
+      #shell = pkgs.zsh;
+      shell = pkgs.fish;
     };
   }; 
 #   users.groups = [
