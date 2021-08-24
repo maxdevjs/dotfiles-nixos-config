@@ -1,4 +1,4 @@
-# dotfiles-nixos
+# dotfiles-nixos-config
 
 Personal config files for [NixOS](https://nixos.org/)
 

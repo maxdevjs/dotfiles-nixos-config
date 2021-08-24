@@ -3,6 +3,7 @@
     systemPackages = with pkgs;
       [
         abduco
+        dvtm
       ];
   };
 }
