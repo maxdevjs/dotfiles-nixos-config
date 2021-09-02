@@ -9,6 +9,7 @@ in {
   environment = {
     systemPackages = with pkgs; [
       unstable.docker
+      unstable.lazydocker
     ];
   };
   virtualisation.docker.enable = true;
