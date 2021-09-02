@@ -11,6 +11,7 @@
         gitAndTools.hub
         gitAndTools.git-radar
         git-up
+        lazygit
         tig
       ];
   };
