@@ -23,9 +23,11 @@ in {
         unstable.jack2
         unstable.jetbrains.pycharm-community
         unstable.kitty
+        #unstable.lorri
         unstable.neovim
         unstable.nodejs-14_x
         unstable.nvd # Nix/NixOS package version diff tool
+        unstable.postman
         unstable.simplescreenrecorder
         unstable.sumneko-lua-language-server
         unstable.vscode
