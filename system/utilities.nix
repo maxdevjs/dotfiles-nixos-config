@@ -3,6 +3,7 @@
     systemPackages = with pkgs;
       [
         cava
+        efibootmgr
         finger_bsd
         fontpreview
         jq # lightweight and flexible command-line JSON processor
