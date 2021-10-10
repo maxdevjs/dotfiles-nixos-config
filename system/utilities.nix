@@ -2,10 +2,10 @@
   environment = {
     systemPackages = with pkgs;
       [
-        cava
         efibootmgr
         finger_bsd
         fontpreview
+        iotop
         lshw
         wavemon
         xdo
