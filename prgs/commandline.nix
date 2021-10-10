@@ -8,6 +8,7 @@
         file
         fzf
         htop
+        jq
         killall
         lf                        # (as in "list files") is a terminal file manager written in Go
         lsb-release
