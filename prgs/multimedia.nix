@@ -2,12 +2,14 @@
   environment = {
     systemPackages = with pkgs;
       [
+        cava
         darktable
         deadbeef-with-plugins
         digikam
         ffmpeg-full
         frei0r
         glxinfo
+        graphviz
         handbrake
         #jack2: ../unstable/unstable.nix
         kdeApplications.kdenlive

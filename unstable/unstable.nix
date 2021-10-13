@@ -9,6 +9,7 @@ in {
     systemPackages = with pkgs; 
       [
         #unstable.babelfish
+        unstable.btop
         unstable.fish
         #unstable.fishPlugins.fzf-fish
         #unstable.fishPlugins.done
