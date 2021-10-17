@@ -12,6 +12,7 @@
       ./browsers/default.nix
       ./desktop-environments/default.nix
       ./dev/default.nix
+      #./dev-games/default.nix
       ./games/default.nix
       ./msgs/default.nix
       ./overlays/default.nix
