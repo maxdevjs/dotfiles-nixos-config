@@ -16,6 +16,7 @@
         neofetch
         nnn
         ranger
+        ripgrep
         ripgrep-all               #  Ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, and more
         # skim
         silver-searcher           # 
